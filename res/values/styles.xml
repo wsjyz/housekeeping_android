@@ -14,13 +14,13 @@
     </style>
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -32,6 +32,20 @@
     <style name="MMTabButton">
         <item name="android:textSize">12.0dip</item>
         <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/demo_bg_checkbox_menus</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:paddingTop">4.0dip</item>
+        <item name="android:paddingBottom">1.0dip</item>
+        <item name="android:drawablePadding">5.0dip</item>
+    </style>
+
+    <style name="orderTabButton">
+        <item name="android:textSize">12.0dip</item>
+        <item name="android:gravity">center</item>
         <item name="android:background">@drawable/demo_bg_checkbox_menus</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">fill_parent</item>
