@@ -7,6 +7,8 @@
     <color name="bg_gray">#dbdbdb</color>
     <color name="bg_color">#dbdbdb</color>
     <color name="green_yellow">#dbf900</color>
+    <color name="dialog_bg">#80000000</color>
+    <color name="yellow">#dbf900</color>
     <!-- demo -->
     <color name="txt_blue">#FF007CB0</color>
     <color name="txt_gray">#FF575756</color>

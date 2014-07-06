@@ -48,7 +48,7 @@ public class Main extends Basic implements OnClickListener,
 
 	public void prepareData() {
 		hourlyInforIntent = new Intent().setClass(this, UserInfor.class);
-		orderIntent = new Intent().setClass(this, MyExam.class);
+		orderIntent = new Intent().setClass(this, OrderList.class);
 		couponIntent = new Intent().setClass(this, MyMessage.class);
 		searchIntent = new Intent().setClass(this, Setting.class);
 		moreIntent = new Intent().setClass(this, More.class);

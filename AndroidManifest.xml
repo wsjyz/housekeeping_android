@@ -85,6 +85,14 @@
             android:name="com.housekeeping.activity.MemberInfor"
             android:configChanges="orientation|keyboardHidden|screenSize" >
         </activity>
+        <activity
+            android:name="com.housekeeping.activity.OrderList"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.housekeeping.activity.OrderDetail"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
     </application>
 
 </manifest>
