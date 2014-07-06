@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="80dp"
+    android:background="@color/white"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="fill_parent"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/hourly_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/logo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/segmentline"
+        android:layout_width="28dp"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/red" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:background="@drawable/location" />
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/red" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/hourly_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="李阿姨"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hourly_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hourly_name"
+            android:layout_marginTop="-5dp"
+            android:text="关注数："
+            android:textColor="@color/text_glay"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hourly_attention_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hourly_name"
+            android:layout_marginTop="-5dp"
+            android:layout_toRightOf="@+id/hourly_attention"
+            android:text="1300"
+            android:textColor="@color/text_glay"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hourly_tran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hourly_name"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="-5dp"
+            android:layout_toRightOf="@+id/hourly_attention_num"
+            android:text="已成交数："
+            android:textColor="@color/text_glay"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hourly_tran_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hourly_name"
+            android:layout_marginTop="-5dp"
+            android:layout_toRightOf="@+id/hourly_tran"
+            android:text="800"
+            android:textColor="@color/text_glay"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/name_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/hourly_name"
+            android:orientation="horizontal"
+            android:paddingBottom="24dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/name_yes" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chengxin_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/name_yes"
+            android:orientation="horizontal"
+            android:paddingBottom="24dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chengxin_yes" />
+        </LinearLayout>
+
+        <RatingBar
+            android:id="@+id/start_ratingbar"
+            style="@style/roomRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/hourly_tran_num" >
+        </RatingBar>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/direct" />
+    </RelativeLayout>
+
+</LinearLayout>

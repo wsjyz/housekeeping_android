@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+       android:layout_width="200dp"
+        android:layout_height="160dp"
+        android:background="@color/green_yellow"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/moret_weibo"
+            android:text="分享到腾讯微博"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/morex_weibo"
+            android:text="分享到新浪微博"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>

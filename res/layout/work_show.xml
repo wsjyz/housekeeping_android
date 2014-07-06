@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/red"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/textViewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:drawableRight="@drawable/back"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="工作展示"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" 
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="194dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/demo_work_show" />
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="194dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/demo_work_show" />
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="194dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/demo_work_show" />
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/work_show_bg"
+            android:clickable="true"
+            android:paddingBottom="16dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="16dp"
+            android:text="胡阿姨在上海做钟点工10年了，胡阿姨真的很热心，勤快，善良。很感激阿姨，在我很忙的日子里照顾我的家。由于阿姨不会上网，所以帮阿姨登网站发布信息。胡阿姨住在虹梅南路和春申路这边，所以主要是做春申路，莲花路，虹梅南路，老沪闵路这一片。如果有需要钟点工阿姨的，可以找胡阿姨。"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+</LinearLayout>
