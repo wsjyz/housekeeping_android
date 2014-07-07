@@ -26,7 +26,7 @@ public class Main extends Basic implements OnClickListener,
 	private TextView main_tab_new_message;
 	private Intent hourlyInforIntent, orderIntent, couponIntent, searchIntent,
 			moreIntent;
-	private Button hourlylist;
+	private Button hourlylist,xinju;
 	private int[] location = new int[2];
 	private RadioButton tab_myorder;
 	private RadioGroup radioGroup;
@@ -43,14 +43,13 @@ public class Main extends Basic implements OnClickListener,
 		setContentView(R.layout.main);
 		prepareData();
 		initView();
-
 	}
 
 	public void prepareData() {
 		hourlyInforIntent = new Intent().setClass(this, UserInfor.class);
 		orderIntent = new Intent().setClass(this, OrderList.class);
 		couponIntent = new Intent().setClass(this, MyMessage.class);
-		searchIntent = new Intent().setClass(this, Setting.class);
+		searchIntent = new Intent().setClass(this, Search.class);
 		moreIntent = new Intent().setClass(this, More.class);
 		dm = ScreenUtils.getDisplayMetrics(this);
 		screenWidth = dm.widthPixels;
@@ -59,6 +58,7 @@ public class Main extends Basic implements OnClickListener,
 
 	public void initView() {
 		tab_myorder = (RadioButton) findViewById(R.id.tab_myorder);
+		xinju = (Button) findViewById(R.id.xinju);
 		im_vip = (ImageView) findViewById(R.id.im_vip);
 		main_tab_new_message = (TextView) findViewById(R.id.main_tab_new_message);
 		hourlylist = (Button) findViewById(R.id.hourlylist);
@@ -75,6 +75,7 @@ public class Main extends Basic implements OnClickListener,
 		hourlylist.setOnClickListener(this);
 		im_vip.setOnClickListener(this);
 		radioGroup.setOnCheckedChangeListener(this);
+		xinju.setOnClickListener(this);
 	}
 
 	@Override
@@ -119,6 +120,11 @@ public class Main extends Basic implements OnClickListener,
 		case R.id.im_vip:
 			Intent memberListIntent = new Intent(this, MemberList.class);
 			startActivity(memberListIntent);
+			break;
+		case R.id.xinju:
+			Intent orderIntent = new Intent(this, OrderSubmit.class);
+			orderIntent.putExtra("type", "2");
+			startActivity(orderIntent);
 			break;
 		default:
 			break;

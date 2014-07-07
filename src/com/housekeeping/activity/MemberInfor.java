@@ -23,7 +23,6 @@ public class MemberInfor extends Basic implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		setContentView(R.layout.member_intro);
 		init();
 	}

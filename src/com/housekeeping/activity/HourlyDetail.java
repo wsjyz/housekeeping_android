@@ -62,7 +62,10 @@ public class HourlyDetail extends Basic implements OnClickListener {
 		// TODO Auto-generated method stub
 		switch (view.getId()) {
 		case R.id.call_hourly:
-			startActivity(new Intent(this, OrderSubmit.class));
+//			hourlyDetailIntent.putExtra("type", "1");
+			Intent orderIntent = new Intent(this, OrderSubmit.class);
+			orderIntent.putExtra("type", "1");
+			startActivity(orderIntent);
 			break;
 		case R.id.re_workshow_clean:
 			startActivity(new Intent(this, WorkShow.class));

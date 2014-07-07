@@ -114,6 +114,7 @@ public class HourlyList extends Basic{
 						// TODO Auto-generated method stub
 						Intent hourlyDetailIntent = new Intent();
 						hourlyDetailIntent.setClass(HourlyList.this, HourlyDetail.class);
+						
 						startActivity(hourlyDetailIntent);
 					}
 				});
