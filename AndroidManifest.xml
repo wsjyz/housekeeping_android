@@ -97,6 +97,14 @@
             android:name="com.housekeeping.activity.Search"
             android:configChanges="orientation|keyboardHidden|screenSize" >
         </activity>
+          <activity
+            android:name="com.housekeeping.activity.WebLoad"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+         <activity
+            android:name="com.housekeeping.activity.Coupon"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
     </application>
 
 </manifest>

@@ -202,7 +202,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
             LinkedList<TextView> listTxtBottom = new LinkedList<TextView>();  
             for (int i = 0; i < size; i++) {  
                 String keyword = vecKeywords.get(i);  
-                // 随机颜色  
+                // 随机颜色  0x7f040000
                 int ranColor = 0xff000000 | random.nextInt(0x0077ffff);  
                 // 随机位置，糙值  
                 int xy[] = randomXY(random, listX, listY, xItem);  
@@ -212,7 +212,9 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
                 final TextView txt = new TextView(getContext());  
                 txt.setOnClickListener(itemClickListener);  
                 txt.setText(keyword);  
-                txt.setTextColor(ranColor);  
+                txt.setTextColor(0xff000000);  
+                txt.setBackgroundColor(0x7f040000);
+                txt.setPadding(6, 4, 6, 4);
                 txt.setTextSize(TypedValue.COMPLEX_UNIT_SP, txtSize);  
                 txt.setShadowLayer(1, 1, 1, 0xdd696969);  
                 txt.setGravity(Gravity.CENTER);  

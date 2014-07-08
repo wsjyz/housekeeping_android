@@ -52,6 +52,7 @@
         <RadioButton
             android:id="@+id/tab_search_jinque"
             style="@style/orderTabButton"
+            android:checked="true"
             android:layout_weight="1.0"
             android:text="精确搜索" />
 
@@ -59,7 +60,7 @@
            android:id="@+id/tab_search_ci"
             style="@style/orderTabButton"
             android:layout_weight="1.0"
-            android:checked="true"
+            
             android:text="关键词搜索" />
     </RadioGroup>
 
@@ -214,7 +215,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="50dp"
             android:background="@color/red"
-            android:text="@string/login_string"
+            android:text="搜索"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />

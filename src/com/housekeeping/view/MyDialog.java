@@ -3,6 +3,7 @@ package com.housekeeping.view;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,8 +15,13 @@ public class MyDialog extends Dialog implements
 
 	private Context context;
 	private Button dialog_yes, dialog_no;
-	private TextView dialog_text;
+	private TextView dialog_text, dialog_title;
 	private MyDialogOnClickListener clickListener;
+	private View view;
+	String title;
+	String content;
+	String yes;
+	String no;
 
 	public MyDialog(Context context) {
 		super(context);
@@ -23,9 +29,8 @@ public class MyDialog extends Dialog implements
 		this.context = context;
 	}
 
-	public MyDialog(Context context, 
-			MyDialogOnClickListener clickListener) {
-		super(context,  R.style.dialog);
+	public MyDialog(Context context, MyDialogOnClickListener clickListener) {
+		super(context, R.style.dialog);
 		this.context = context;
 		this.clickListener = clickListener;
 	}
@@ -36,11 +41,34 @@ public class MyDialog extends Dialog implements
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.mydialog);
 		this.setCancelable(false);
+		view = getWindow().getDecorView();
 		dialog_yes = (Button) findViewById(R.id.dialog_yes);
 		dialog_no = (Button) findViewById(R.id.dialog_no);
 		dialog_text = (TextView) findViewById(R.id.dialog_text);
+		dialog_title = (TextView) findViewById(R.id.dialog_title);
+		if (!TextUtils.isEmpty(title)) {
+			dialog_title.setText(title);
+		}
+		if (!TextUtils.isEmpty(content)) {
+			dialog_text.setText(content);
+		}
+		if (!TextUtils.isEmpty(yes)) {
+			dialog_yes.setText(yes);
+		}
+		if (!TextUtils.isEmpty(no)) {
+			dialog_no.setText(no);
+		}
 		dialog_yes.setOnClickListener(this);
 		dialog_no.setOnClickListener(this);
+	}
+
+	public void setStr(String title, String content, String yes, String no) {
+		this.title = title;
+		this.content = content;
+		this.yes = yes;
+		this.no = no;
+		
+		
 	}
 
 	public void setTitle(String title) {

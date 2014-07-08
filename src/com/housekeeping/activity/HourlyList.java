@@ -9,15 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RatingBar;
 
 import com.housekeeping.R;
 
-public class HourlyList extends Basic{
+public class HourlyList extends Basic implements OnClickListener {
 	private List<String> strs;
 	private ListView hourly_listview;
 	private LayoutInflater layoutInflater;
@@ -26,6 +25,7 @@ public class HourlyList extends Basic{
 	private List<String> groupkey = new ArrayList<String>();
 	private List<String> aList = new ArrayList<String>();
 	private List<String> bList = new ArrayList<String>();
+	private LinearLayout li_biaozhun;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class HourlyList extends Basic{
 		for (int i = 0; i < 5; i++) {
 			aList.add("1km" + i);
 		}
-	
+
 		list.addAll(aList);
 		list.add("1km");
 		for (int i = 0; i < 8; i++) {
@@ -63,8 +63,11 @@ public class HourlyList extends Basic{
 	};
 
 	private void initView() {
+		li_biaozhun = (LinearLayout) findViewById(R.id.li_biaozhun);
+
 		hourly_listview = (ListView) findViewById(R.id.hourly_listview);
 		hourly_listview.setAdapter(hourlyAdapter);
+		li_biaozhun.setOnClickListener(this);
 	}
 
 	class HourlyAdapter extends BaseAdapter {
@@ -104,17 +107,19 @@ public class HourlyList extends Basic{
 				view = layoutInflater.inflate(R.layout.hourly_list_itema, null);
 			} else {
 				view = layoutInflater.inflate(R.layout.hourly_list_item, null);
-				RatingBar start_ratingbar = (RatingBar) view.findViewById(R.id.start_ratingbar);
+				RatingBar start_ratingbar = (RatingBar) view
+						.findViewById(R.id.start_ratingbar);
 				start_ratingbar.setRating((float) 3.2);
-				
+
 				view.setOnClickListener(new OnClickListener() {
-					
+
 					@Override
 					public void onClick(View arg0) {
 						// TODO Auto-generated method stub
 						Intent hourlyDetailIntent = new Intent();
-						hourlyDetailIntent.setClass(HourlyList.this, HourlyDetail.class);
-						
+						hourlyDetailIntent.setClass(HourlyList.this,
+								HourlyDetail.class);
+
 						startActivity(hourlyDetailIntent);
 					}
 				});
@@ -122,6 +127,19 @@ public class HourlyList extends Basic{
 			return view;
 		}
 
+	}
+
+	@Override
+	public void onClick(View view) {
+		// TODO Auto-generated method stub
+		switch (view.getId()) {
+		case R.id.li_biaozhun:
+			Intent webLoadIntent = new Intent(this, WebLoad.class);
+			startActivity(webLoadIntent);
+			break;
+		default:
+			break;
+		}
 	}
 
 }
