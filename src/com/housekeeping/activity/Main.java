@@ -191,7 +191,7 @@ public class Main extends Basic implements OnClickListener,
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			flag = 2;
 			myDialog = new MyDialog(this, this);
-			myDialog.setStr("", "你确定退出吗？", "确定", "返回");
+			myDialog.setStr("温馨提示", "你确定退出吗？", "确定", "取消");
 			myDialog.show();
 			return true;
 		}

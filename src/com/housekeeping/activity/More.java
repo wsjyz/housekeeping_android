@@ -24,6 +24,8 @@ public class More extends Basic implements OnClickListener {
 			view_more_star;
 	private PopupWindow pop_more_share, pop_more_infor, pop_more_idea, pop_more_relation, pop_more_star;
     private MyPopDialog myPopDialog;
+    private RelativeLayout pop_more_share_parent,pop_more_idea_parent,pop_more_about_parent;
+    
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,10 +49,12 @@ public class More extends Basic implements OnClickListener {
 		re_more_delete = (RelativeLayout) findViewById(R.id.re_more_delete);
 		re_more_refresh = (RelativeLayout) findViewById(R.id.re_more_refresh);
 		view_more_share = inflater.inflate(R.layout.pop_more_share, null);
-
+		pop_more_share_parent = (RelativeLayout) view_more_share.findViewById(R.id.pop_more_share_parent);
 		view_more_idea = inflater.inflate(R.layout.pop_more_idea, null);
-
+		pop_more_idea_parent = (RelativeLayout) view_more_idea.findViewById(R.id.pop_more_idea_parent);
 		view_more_star = inflater.inflate(R.layout.pop_more_about, null);
+		pop_more_about_parent = (RelativeLayout) view_more_star.findViewById(R.id.pop_more_about_parent);
+		
 		initPop();
 		re_more_delete.setOnClickListener(this);
 		re_more_refresh.setOnClickListener(this);
@@ -59,6 +63,9 @@ public class More extends Basic implements OnClickListener {
 		re_more_idea.setOnClickListener(this);
 		re_more_relation.setOnClickListener(this);
 		re_more_share.setOnClickListener(this);
+		pop_more_share_parent.setOnClickListener(this);
+		pop_more_idea_parent.setOnClickListener(this);
+		pop_more_about_parent.setOnClickListener(this);
 	};
 
 	public void initPop() {
@@ -138,6 +145,15 @@ public class More extends Basic implements OnClickListener {
 		case R.id.re_more_star:
 			showPop(pop_more_star);
 			break;
+		case R.id.pop_more_share_parent:
+			closePop(pop_more_share);
+			break;
+		case R.id.pop_more_idea_parent:
+			closePop(pop_more_idea);
+			break;
+		case R.id.pop_more_about_parent:
+			closePop(pop_more_star);
+			break;	
 		default:
 			break;
 		}

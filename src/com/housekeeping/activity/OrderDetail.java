@@ -23,7 +23,7 @@ public class OrderDetail extends Basic implements OnClickListener ,MyDialogOnCli
 
 	private void prepareData() {
 		myDialog = new MyDialog(this, this);
-		
+		myDialog.setStr("温馨提示", "确定保存订单？", "确定", "取消");
 	};
 
 	private void initView() {
