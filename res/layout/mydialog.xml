@@ -57,7 +57,6 @@
             android:layout_marginBottom="645dp"
             android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
-            android:hint=""
             android:paddingLeft="18dp"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
@@ -67,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_marginBottom="45dp"
             android:layout_marginTop="60dp"
             android:background="@android:color/transparent"
