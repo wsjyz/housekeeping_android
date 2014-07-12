@@ -26,9 +26,11 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
-            android:textSize="16dp" />
+            android:textSize="16dp" 
+             android:onClick="onBackClick"/>
 
         <TextView
+            android:id="@+id/title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

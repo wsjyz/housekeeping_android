@@ -1,5 +1,7 @@
 package com.housekeeping.activity;
 
+import com.housekeeping.R;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,4 +18,13 @@ public class Basic extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 	}
 
+	public void onBackClick(View view) {
+		switch (view.getId()) {
+		case R.id.textViewBack:
+			this.finish();
+			break;
+		default:
+			break;
+		}
+	}
 }

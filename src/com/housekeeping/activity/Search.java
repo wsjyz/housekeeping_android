@@ -17,17 +17,9 @@ import com.housekeeping.view.KeywordsFlow;
 
 public class Search extends Basic implements OnClickListener,
 		OnCheckedChangeListener {
-	public static final String[] keywords = { "QQ", "Sodino", "APK", "GFW",
-			"铅笔",//
-			"短信", "桌面精灵", "MacBook Pro", "平板电脑", "雅诗兰黛",//
-			"卡西欧 TR-100", "笔记本", "SPY Mouse", "Thinkpad E40", "捕鱼达人",//
-			"内存清理", "地图", "导航", "闹钟", "主题",//
-			"通讯录", "播放器", "CSDN leak", "安全", "3D",//
-			"美女", "天气", "4743G", "戴尔", "联想",//
-			"欧朋", "浏览器", "愤怒的小鸟", "mmShow", "网易公开课",//
-			"iciba", "油水关系", "网游App", "互联网", "365日历",//
-			"脸部识别", "Chrome", "Safari", "中国版Siri", "A5处理器",//
-			"iPhone4S", "摩托 ME525", "魅族 M9", "尼康 S2500" };
+	public static final String[] keywords = { "保姆", "月嫂", "小时工", "留洋",
+			"英语",//
+			"勤快" };
 	private KeywordsFlow keywordsFlow;
 	private Button next;
 	private RadioGroup main_tab_group;

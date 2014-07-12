@@ -1,22 +1,29 @@
 package com.housekeeping.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,6 +33,7 @@ import android.widget.TextView;
 import com.housekeeping.R;
 import com.housekeeping.utils.ScreenUtils;
 import com.housekeeping.view.MyDialog;
+import com.housekeeping.view.MyPopDialog;
 import com.housekeeping.view.MyDialog.MyDialogOnClickListener;
 
 public class Main extends Basic implements OnClickListener,
@@ -34,7 +42,7 @@ public class Main extends Basic implements OnClickListener,
 	private TextView main_tab_new_message;
 	private Intent hourlyInforIntent, orderIntent, couponIntent, searchIntent,
 			moreIntent;
-	private Button hourlylist, xinju,bt_want;
+	private Button hourlylist, xinju, bt_want,more_want;
 	private int[] location = new int[2];
 	private RadioButton tab_myorder;
 	private RadioGroup radioGroup;
@@ -45,12 +53,25 @@ public class Main extends Basic implements OnClickListener,
 	private ImageView im_vip;
 	private MyDialog myDialog;
 	private ImageView img_phone;
-	private Button dialog_yes, dialog_no;
+	private Button dialog_yes, dialog_no, hourly_common,service_idea;
 	private TextView dialog_text, dialog_title;
-	private PopupWindow pop_zhouqi, pop_zhouqi_list;
-    private View view_zhouqi,vie_zhouqi_list;
-    private LayoutInflater inflater;
-    private LinearLayout parent;
+	private PopupWindow pop_zhouqi, pop_main_bottom;
+	private View view_zhouqi, vie_main_bottom;
+	private LayoutInflater inflater;
+	private LinearLayout parent;
+	private List<String> days;
+	private ListView pop_listview;
+	private ZhouqiAdapter zhouqiAdapter;
+	private TextView tv_value,pop_title;
+	private LinearLayout topre;
+	private GridView grid_main_bottom;
+	private List<String> hourlys;
+	private HourlyAdapter hourlyAdapter;
+	private ImageView main_next;
+	private int flag;
+	private View view_pop;
+	private PopupWindow pop_pop;
+	 private MyPopDialog myPopDialog;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -62,9 +83,19 @@ public class Main extends Basic implements OnClickListener,
 	}
 
 	public void prepareData() {
+		days = new ArrayList<String>();
+		hourlys = new ArrayList<String>();
+		for (int i = 1; i < 30; i++) {
+			days.add("" + i);
+		}
+		for (int i = 1; i < 8; i++) {
+			hourlys.add("");
+		}
+		zhouqiAdapter = new ZhouqiAdapter();
+		hourlyAdapter = new HourlyAdapter();
 		inflater = LayoutInflater.from(this);
 		view_zhouqi = inflater.inflate(R.layout.pop_zhouqi, null);
-		vie_zhouqi_list = inflater.inflate(R.layout.pop_zhouqi_list, null);
+		vie_main_bottom = inflater.inflate(R.layout.main_bottom, null);
 		hourlyInforIntent = new Intent().setClass(this, UserInfor.class);
 		orderIntent = new Intent().setClass(this, OrderList.class);
 		couponIntent = new Intent().setClass(this, Coupon.class);
@@ -73,20 +104,30 @@ public class Main extends Basic implements OnClickListener,
 		dm = ScreenUtils.getDisplayMetrics(this);
 		screenWidth = dm.widthPixels;
 		screenHeight = dm.heightPixels;
-		myDialog = new MyDialog(this, this);
-		myDialog.setStr("请拨打服务热线：", "400-100-56688", "拨打", "重播");
+
 	}
 
 	public void initView() {
+		view_pop = inflater.inflate(R.layout.pop_more_delete, null);
+		pop_listview = (ListView) view_zhouqi.findViewById(R.id.pop_listview);
+		main_next = (ImageView) vie_main_bottom.findViewById(R.id.main_next);
+		topre = (LinearLayout) findViewById(R.id.topre);
 		parent = (LinearLayout) findViewById(R.id.parent);
 		tab_myorder = (RadioButton) findViewById(R.id.tab_myorder);
 		xinju = (Button) findViewById(R.id.xinju);
+		service_idea = (Button) findViewById(R.id.service_idea);
 		bt_want = (Button) findViewById(R.id.bt_want);
 		im_vip = (ImageView) findViewById(R.id.im_vip);
+		hourly_common = (Button) findViewById(R.id.hourly_common);
 		main_tab_new_message = (TextView) findViewById(R.id.main_tab_new_message);
 		hourlylist = (Button) findViewById(R.id.hourlylist);
 		img_phone = (ImageView) findViewById(R.id.img_phone);
 		radioGroup = (RadioGroup) this.findViewById(R.id.main_tab_group);
+		tv_value = (TextView) view_zhouqi.findViewById(R.id.tv_value);
+		grid_main_bottom = (GridView) vie_main_bottom
+				.findViewById(R.id.bottom_gridview);
+		pop_title = (TextView) view_pop.findViewById(R.id.pop_title);
+		more_want = (Button) findViewById(R.id.more_want);
 		tab_myorder.getLocationOnScreen(location);
 		main_tab_new_message.setVisibility(View.VISIBLE);
 		main_tab_new_message.setText("10");
@@ -96,59 +137,62 @@ public class Main extends Basic implements OnClickListener,
 		layoutParams.setMargins(screenWidth * 2 / 5 - screenWidth * 1 / 15, 3,
 				0, 0);
 		main_tab_new_message.setLayoutParams(layoutParams);
+		pop_listview.setAdapter(zhouqiAdapter);
+		grid_main_bottom.setAdapter(hourlyAdapter);
 		hourlylist.setOnClickListener(this);
 		im_vip.setOnClickListener(this);
 		radioGroup.setOnCheckedChangeListener(this);
 		xinju.setOnClickListener(this);
 		img_phone.setOnClickListener(this);
 		bt_want.setOnClickListener(this);
+		tv_value.setOnClickListener(this);
+		main_next.setOnClickListener(this);
+		hourly_common.setOnClickListener(this);
+		more_want.setOnClickListener(this);
+		service_idea.setOnClickListener(this);
+		pop_listview.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				pop_listview.setVisibility(View.GONE);
+			}
+
+		});
 	}
-    public void initPop(){
-    	view_zhouqi.getBackground().setAlpha(75);
-    	pop_zhouqi = new PopupWindow(view_zhouqi,
+
+	public void initPop() {
+		view_zhouqi.getBackground().setAlpha(75);
+		pop_zhouqi = new PopupWindow(view_zhouqi, LayoutParams.FILL_PARENT,
+				LayoutParams.FILL_PARENT, false);
+		// 需要设置一下此参数，点击外边可消失
+		pop_zhouqi.setBackgroundDrawable(new BitmapDrawable());
+		// 设置点击窗口外边窗口消失
+		pop_zhouqi.setOutsideTouchable(true);
+		// 设置此参数获得焦点，否则无法点击
+		pop_zhouqi.setFocusable(true);
+		pop_main_bottom = new PopupWindow(vie_main_bottom,
 				LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, false);
 		// 需要设置一下此参数，点击外边可消失
-    	pop_zhouqi.setBackgroundDrawable(new BitmapDrawable());
+		pop_main_bottom.setBackgroundDrawable(new BitmapDrawable());
 		// 设置点击窗口外边窗口消失
-    	pop_zhouqi.setOutsideTouchable(true);
+		pop_main_bottom.setOutsideTouchable(true);
 		// 设置此参数获得焦点，否则无法点击
-    	pop_zhouqi.setFocusable(true);
-    	
-    	pop_zhouqi_list = new PopupWindow(vie_zhouqi_list,
-				LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, false);
-		// 需要设置一下此参数，点击外边可消失
-    	pop_zhouqi_list.setBackgroundDrawable(new BitmapDrawable());
-		// 设置点击窗口外边窗口消失
-    	pop_zhouqi_list.setOutsideTouchable(true);
-		// 设置此参数获得焦点，否则无法点击
-    	pop_zhouqi_list.setFocusable(true);
-    }
+		pop_main_bottom.setFocusable(true);
+		
+		
+	}
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		// TODO Auto-generated method stub
 
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage("你确定退出吗？")
-					.setCancelable(false)
-					.setPositiveButton("确定",
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
-									finish();
-									System.exit(0);
-								}
-							})
-					.setNegativeButton("返回",
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
-									dialog.cancel();
-								}
-							});
-			AlertDialog alert = builder.create();
-			alert.show();
+			flag = 2;
+			myDialog = new MyDialog(this, this);
+			myDialog.setStr("你确定退出吗？", "  ", "确定", "返回");
+			myDialog.show();
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -172,10 +216,39 @@ public class Main extends Basic implements OnClickListener,
 			startActivity(orderIntent);
 			break;
 		case R.id.img_phone:
+			flag = 1;
+			myDialog = new MyDialog(this, this);
+			myDialog.setStr("请拨打服务热线：", "400-100-56688", "拨打", "重播");
 			myDialog.show();
 			break;
 		case R.id.bt_want:
 			showPop(pop_zhouqi);
+			break;
+		case R.id.tv_value:
+			// showPop(pop_zhouqi_list);
+			// if (pop_zhouqi_list != null) {
+			// pop_zhouqi_list.showAsDropDown(tv_value);
+			// }
+			pop_listview.setVisibility(View.VISIBLE);
+			break;
+		case R.id.hourly_common:
+			// showPop(pop_zhouqi_list);
+			if (pop_main_bottom != null) {
+				pop_main_bottom.showAsDropDown(topre);
+			}
+			break;
+		case R.id.main_next:
+			closePop(pop_main_bottom);
+			break;
+		case R.id.more_want:
+			myPopDialog = new MyPopDialog(this);
+			myPopDialog.setStr("更多功能，正在努力升级中，敬请期待待");
+			myPopDialog.show();
+			break;
+		case R.id.service_idea:
+			Intent webLoadIntent = new Intent(this, WebLoad.class);
+			webLoadIntent.putExtra("title", "服务理念");
+			startActivity(webLoadIntent);
 			break;
 		default:
 			break;
@@ -209,7 +282,18 @@ public class Main extends Basic implements OnClickListener,
 	@Override
 	public void yes() {
 		// TODO Auto-generated method stub
-
+		switch (flag) {
+		case 1:
+			Intent phoneIntent = new Intent("android.intent.action.CALL",
+			Uri.parse("tel:" + "400-100-56688"));
+			startActivity(phoneIntent);
+			break;
+		case 2:
+			super.finish();
+			break;
+		default:
+			break;
+		}
 	}
 
 	@Override
@@ -217,9 +301,9 @@ public class Main extends Basic implements OnClickListener,
 		// TODO Auto-generated method stub
 
 	}
+
 	public void showPop(PopupWindow pop) {
 		if (pop != null) {
-			System.out.println("doit..........");
 			pop.showAtLocation(parent, Gravity.CENTER, 0, 0);
 		}
 	}
@@ -230,4 +314,62 @@ public class Main extends Basic implements OnClickListener,
 			pop.dismiss();
 		}
 	}
+
+	class ZhouqiAdapter extends BaseAdapter {
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return days.size();
+		}
+
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return days.get(arg0);
+		}
+
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return arg0;
+		}
+
+		@Override
+		public View getView(int position, View curentView, ViewGroup arg2) {
+			// TODO Auto-generated method stub
+			curentView = inflater.inflate(R.layout.pop_zhouqi_list_item, null);
+			TextView text = (TextView) curentView.findViewById(R.id.text);
+			text.setText(days.get(position));
+			return curentView;
+		}
+	};
+
+	class HourlyAdapter extends BaseAdapter {
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return hourlys.size();
+		}
+
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return hourlys.get(arg0);
+		}
+
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return arg0;
+		}
+
+		@Override
+		public View getView(int position, View curentView, ViewGroup arg2) {
+			// TODO Auto-generated method stub
+			curentView = inflater.inflate(R.layout.main_bottom_item, null);
+			return curentView;
+		}
+	};
 }

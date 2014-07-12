@@ -121,6 +121,7 @@
                     android:textSize="14sp" />
 
                 <Button
+                    android:id="@+id/hourly_common"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -153,6 +154,7 @@
                 android:orientation="horizontal" >
 
                 <Button
+                    android:id="@+id/more_want"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -164,6 +166,7 @@
                     android:textSize="14sp" />
 
                 <Button
+                    android:id="@+id/service_idea"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 import com.housekeeping.R;
 
-public class MyDialog extends Dialog implements
+public class MySureDialog extends Dialog implements
 		android.view.View.OnClickListener {
 
 	private Context context;
-	private Button dialog_yes, dialog_no;
+	private Button dialog_yes;
 	private TextView dialog_text, dialog_title;
 	private MyDialogOnClickListener clickListener;
 	private View view;
@@ -23,13 +23,13 @@ public class MyDialog extends Dialog implements
 	String yes;
 	String no;
 
-	public MyDialog(Context context) {
+	public MySureDialog(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
 		this.context = context;
 	}
 
-	public MyDialog(Context context, MyDialogOnClickListener clickListener) {
+	public MySureDialog(Context context, MyDialogOnClickListener clickListener) {
 		super(context, R.style.dialog);
 		this.context = context;
 		this.clickListener = clickListener;
@@ -43,20 +43,17 @@ public class MyDialog extends Dialog implements
 		this.setCancelable(false);
 		view = getWindow().getDecorView();
 		dialog_yes = (Button) findViewById(R.id.dialog_yes);
-		dialog_no = (Button) findViewById(R.id.dialog_no);
 		dialog_text = (TextView) findViewById(R.id.dialog_text);
 		dialog_title = (TextView) findViewById(R.id.dialog_title);
 		dialog_title.setText(title);
 		dialog_text.setText(content);
 		dialog_yes.setText(yes);
-		dialog_no.setText(no);
 		if(TextUtils.isEmpty(content)){
-			dialog_title.setVisibility(View.INVISIBLE);
+			dialog_title.setVisibility(View.GONE);
 			dialog_text.setText(title);
 		}
 		
 		dialog_yes.setOnClickListener(this);
-		dialog_no.setOnClickListener(this);
 	}
 
 	public void setStr(String title, String content, String yes, String no) {
@@ -77,10 +74,6 @@ public class MyDialog extends Dialog implements
 		switch (view.getId()) {
 		case R.id.dialog_yes:
 			clickListener.yes();
-			this.cancel();
-			break;
-		case R.id.dialog_no:
-			clickListener.no();
 			this.cancel();
 			break;
 		default:

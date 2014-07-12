@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.Vector;
 
+import com.housekeeping.R;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -212,8 +214,8 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
                 final TextView txt = new TextView(getContext());  
                 txt.setOnClickListener(itemClickListener);  
                 txt.setText(keyword);  
-                txt.setTextColor(0xff000000);  
-                txt.setBackgroundColor(0x7f040000);
+                txt.setTextColor(getResources().getColor(R.color.white));  
+                txt.setBackgroundColor(getResources().getColor(R.color.red));
                 txt.setPadding(6, 4, 6, 4);
                 txt.setTextSize(TypedValue.COMPLEX_UNIT_SP, txtSize);  
                 txt.setShadowLayer(1, 1, 1, 0xdd696969);  
