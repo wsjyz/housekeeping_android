@@ -2,17 +2,17 @@ package com.housekeeping.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
 import com.housekeeping.R;
 
 public class MemberList extends Basic implements OnClickListener {
 
-	private RelativeLayout re_gold, re_platinumcard, re_masonrycard;
+	private LinearLayout re_gold, re_platinumcard, re_masonrycard;
 	private Intent memberIntent;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,9 +27,9 @@ public class MemberList extends Basic implements OnClickListener {
 	};
 
 	public void initView() {
-		re_gold = (RelativeLayout) findViewById(R.id.re_gold);
-		re_platinumcard = (RelativeLayout) findViewById(R.id.re_platinumcard);
-		re_masonrycard = (RelativeLayout) findViewById(R.id.re_masonrycard);
+		re_gold = (LinearLayout) findViewById(R.id.re_gold);
+		re_platinumcard = (LinearLayout) findViewById(R.id.re_platinumcard);
+		re_masonrycard = (LinearLayout) findViewById(R.id.re_masonrycard);
 		re_gold.setOnClickListener(this);
 		re_masonrycard.setOnClickListener(this);
 		re_platinumcard.setOnClickListener(this);

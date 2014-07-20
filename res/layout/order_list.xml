@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_gray"
+    android:background="@android:color/white"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/rltop"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/red"
+        android:background="@color/reda"
         android:gravity="center_vertical"
         android:paddingBottom="5dp"
         android:paddingTop="5dp" >
@@ -23,12 +23,12 @@
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
+            android:onClick="onBackClick"
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
-            android:textSize="16dp" 
-             android:onClick="onBackClick"/>
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
             android:clickable="true"
             android:gravity="center"
             android:text="小时工"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -96,7 +96,7 @@
             android:text="历史订单" />
     </LinearLayout>
 
-    <ListView
+    <com.housekeeping.view.XListView
         android:id="@+id/order_listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -104,6 +104,6 @@
         android:cacheColorHint="@android:color/transparent"
         android:divider="@android:color/transparent"
         android:listSelector="@android:color/transparent" >
-    </ListView>
+    </com.housekeeping.view.XListView>
 
 </LinearLayout>

@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@color/white"
+    android:background="@android:color/white"
     android:orientation="horizontal" >
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="2dp"
+        android:layout_width="60dp"
+        android:layout_height="1dp"
         android:layout_gravity="center_vertical"
-        android:background="@color/red" />
+        android:background="@color/green_yellow" />
 
     <LinearLayout
         android:id="@+id/segmentline"
@@ -22,7 +22,7 @@
             android:layout_width="2dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="@color/red" />
+            android:background="@drawable/shuzhi_line" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
             android:layout_width="2dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="@color/red" />
+           android:background="@drawable/shuzhi_line"/>
     </LinearLayout>
 
     <TextView
@@ -43,14 +43,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:text="1km"
-        android:textColor="@color/red"
+        android:textColor="@color/green_yellow"
         android:textSize="14dp" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_marginLeft="2dp"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_gravity="center_vertical"
-        android:background="@color/red" />
+        android:background="@color/green_yellow" />
 
 </LinearLayout>

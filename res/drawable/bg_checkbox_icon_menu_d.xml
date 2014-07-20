@@ -5,5 +5,5 @@
     android:drawable="@drawable/search" /> 
     <item 
     android:state_checked="false" 
-    android:drawable="@drawable/search" /> 
+    android:drawable="@drawable/search_un" /> 
 </selector> 

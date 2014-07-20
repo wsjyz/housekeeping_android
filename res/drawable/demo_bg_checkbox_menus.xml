@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?> 
-<selector xmlns:android="http://schemas.android.com/apk/res/android"> 
-    <item 
-    android:state_checked="false" 
-    android:drawable="@drawable/demo_mm_trans" /> 
-    <item 
-    android:state_checked="true" 
-    android:drawable="@drawable/demo_home_btn_bg" /> 
-</selector> 
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/demo_mm_trans" android:state_checked="false"/>
+    <item android:drawable="@drawable/demo_home_btn_bg" android:state_checked="true"/>
+
+</selector>

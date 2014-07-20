@@ -5,5 +5,5 @@
     android:drawable="@drawable/coupon" /> 
     <item 
     android:state_checked="false" 
-    android:drawable="@drawable/coupon" /> 
+    android:drawable="@drawable/coupon_un" /> 
 </selector> 

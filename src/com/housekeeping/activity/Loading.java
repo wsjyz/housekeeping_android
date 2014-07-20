@@ -30,7 +30,7 @@ public class Loading extends Basic {
 				startActivity(intent);
 				Loading.this.finish();// ½áÊø¶¯»­
 			}
-		}, 0);
+		}, (long) 1000.02);
 	}
 
 }

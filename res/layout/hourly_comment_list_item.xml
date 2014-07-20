@@ -2,24 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/bg_color"
+    android:background="@android:color/white"
     android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginLeft="90dp"
-        android:background="@color/red"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:text="满意"
-        android:textColor="@color/white"
-        android:textSize="10dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" >
 
         <TextView
             android:id="@+id/laizhi"
@@ -28,7 +17,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginRight="10dp"
             android:text="来自"
-            android:textColor="@color/white"
+            android:textColor="@color/text_glay"
             android:textSize="10dp" />
 
         <TextView
@@ -38,7 +27,19 @@
             android:layout_marginBottom="5dp"
             android:layout_toRightOf="@+id/laizhi"
             android:text="自由飞翔"
-            android:textColor="@color/white"
+            android:textColor="@color/text_glay"
+            android:textSize="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/nike_name"
+            android:background="@color/green_yellow"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="满意"
+            android:textColor="@color/black"
             android:textSize="10dp" />
 
         <TextView
@@ -48,7 +49,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="5dp"
             android:text="2014-7-1 22:24"
-            android:textColor="@color/white"
+            android:textColor="@color/text_glay"
             android:textSize="10dp" />
     </RelativeLayout>
 
@@ -56,18 +57,18 @@
         android:id="@+id/hourly_attention"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:layout_marginTop="6dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="3dp"
+        android:layout_marginTop="6dp"
         android:text="人才的很漂亮，活也干的不错。。"
         android:textColor="@color/white"
         android:textSize="12dp" />
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_marginTop="8dp"
         android:layout_height="2dp"
         android:layout_gravity="bottom"
+        android:layout_marginTop="8dp"
         android:background="@color/white" />
 
 </LinearLayout>

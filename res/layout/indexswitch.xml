@@ -24,14 +24,18 @@
             android:layout_height="fill_parent"
             android:background="@drawable/switchc" >
 
-            <ImageButton
+            <Button
                 android:id="@+id/clock_me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="80dp"
-                android:background="@drawable/clock_me" />
+                android:background="@drawable/clock_me" 
+                android:text="点击欢乐体验吧"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+               />
 
         </RelativeLayout>
     </com.housekeeping.view.SwitchLayout>

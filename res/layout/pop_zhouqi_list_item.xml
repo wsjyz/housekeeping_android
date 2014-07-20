@@ -4,8 +4,8 @@
     android:layout_height="wrap_content"
     android:id="@+id/text"
     android:orientation="vertical" 
-    android:background="@color/red"
-    android:textColor="@color/white"
+    android:background="@color/reda"
+    android:textColor="@color/black"
     android:gravity="center"
     >
 

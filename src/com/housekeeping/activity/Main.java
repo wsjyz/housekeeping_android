@@ -60,7 +60,7 @@ public class Main extends Basic implements OnClickListener,
 	private LayoutInflater inflater;
 	private LinearLayout parent;
 	private List<String> days;
-	private ListView pop_listview;
+	private GridView pop_listview;
 	private ZhouqiAdapter zhouqiAdapter;
 	private TextView tv_value,pop_title;
 	private LinearLayout topre;
@@ -109,7 +109,7 @@ public class Main extends Basic implements OnClickListener,
 
 	public void initView() {
 		view_pop = inflater.inflate(R.layout.pop_more_delete, null);
-		pop_listview = (ListView) view_zhouqi.findViewById(R.id.pop_listview);
+		pop_listview = (GridView) view_zhouqi.findViewById(R.id.pop_listview);
 		main_next = (ImageView) vie_main_bottom.findViewById(R.id.main_next);
 		topre = (LinearLayout) findViewById(R.id.topre);
 		parent = (LinearLayout) findViewById(R.id.parent);

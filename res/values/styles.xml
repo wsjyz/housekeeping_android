@@ -14,7 +14,7 @@
     </style>
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@color/dialog_bg</item>
@@ -30,18 +30,19 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
- <style name="MMTabButton">
+
+    <style name="MMTabButton">
         <item name="android:textSize">12.0dip</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:background">@drawable/demo_bg_checkbox_menus</item>
-        <item name="android:layout_width">fill_parent</item>
+       <item name="android:background">@drawable/demo_bg_checkbox_menus</item>        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:button">@null</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12dp</item>
         <item name="android:layout_weight">1.0</item>
         <item name="android:paddingTop">4.0dip</item>
         <item name="android:paddingBottom">1.0dip</item>
-        <item name="android:drawablePadding">5.0dip</item>
+        <item name="android:drawablePadding">1.0dip</item>
     </style>
 
     <style name="orderTabButton">
@@ -61,5 +62,11 @@
     <style name="MyToggleButton" parent="@android:style/Widget.CompoundButton">
         <item name="android:button">@drawable/demoios_btn</item>
     </style>
-
+<style name="progressbar_style1">
+       <item name="android:maxWidth">33.0dip</item>
+       <item name="android:maxHeight">46.0dip</item>
+       <item name="android:indeterminateDrawable">@anim/progress_bar_anim</item>
+       <item name="android:minWidth">33.0dip</item>
+       <item name="android:minHeight">46.0dip</item>
+   </style>
 </resources>

@@ -29,20 +29,8 @@
             android:name="com.housekeeping.activity.Main"
             android:configChanges="orientation|keyboardHidden|screenSize" >
         </activity>
-        <activity
-            android:name="com.housekeeping.activity.AddExam"
-            android:configChanges="orientation|keyboardHidden|screenSize" >
-        </activity>
-        <activity
-            android:name="com.housekeeping.activity.MyExam"
-            android:configChanges="orientation|keyboardHidden|screenSize" >
-        </activity>
-        <activity
-            android:name="com.housekeeping.activity.MyMessage"
-            android:configChanges="orientation|keyboardHidden|screenSize" >
-        </activity>
-        <activity
-            android:name="com.housekeeping.activity.Setting"
+         <activity
+            android:name="com.housekeeping.activity.Login"
             android:configChanges="orientation|keyboardHidden|screenSize" >
         </activity>
         <activity
@@ -50,10 +38,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
-        <activity
-            android:name="com.housekeeping.activity.Login"
-            android:configChanges="orientation|keyboardHidden|screenSize" >
-        </activity>
+       
         <activity
             android:name="com.housekeeping.activity.HourlyList"
             android:configChanges="orientation|keyboardHidden|screenSize" >

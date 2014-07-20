@@ -5,20 +5,24 @@ import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RatingBar;
 
 import com.housekeeping.R;
+import com.housekeeping.view.XListView;
+import com.housekeeping.view.XListView.IXListViewListener;
+import com.housekeeping.view.XListViewFooter;
 
-public class HourlyList extends Basic implements OnClickListener {
+public class HourlyList extends Basic implements OnClickListener , IXListViewListener {
 	private List<String> strs;
-	private ListView hourly_listview;
+	private XListView hourly_listview;
 	private LayoutInflater layoutInflater;
 	private HourlyAdapter hourlyAdapter;
 	private List<String> list = null;
@@ -26,7 +30,9 @@ public class HourlyList extends Basic implements OnClickListener {
 	private List<String> aList = new ArrayList<String>();
 	private List<String> bList = new ArrayList<String>();
 	private LinearLayout li_biaozhun;
-
+	private Handler mHandler;
+	private int start = 0;
+	private int refreshCnt = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -65,11 +71,51 @@ public class HourlyList extends Basic implements OnClickListener {
 	private void initView() {
 		li_biaozhun = (LinearLayout) findViewById(R.id.li_biaozhun);
 
-		hourly_listview = (ListView) findViewById(R.id.hourly_listview);
+		hourly_listview = (XListView) findViewById(R.id.hourly_listview);
+		hourly_listview.setPullLoadEnable(true);
 		hourly_listview.setAdapter(hourlyAdapter);
+		hourly_listview.setXListViewListener(this);
+//		hourly_listview.setPullRefreshEnable(false);
+		mHandler = new Handler();
+//		mListView.startRefresh();
 		li_biaozhun.setOnClickListener(this);
+		
+	}
+	private void onLoad() {
+		hourly_listview.stopRefresh();
+		hourly_listview.stopLoadMore();
+		hourly_listview.setRefreshTime("¸Õ¸Õ");
+	}
+	
+	@Override
+	public void onRefresh() {
+		mHandler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				start = ++refreshCnt;
+//				items.clear();
+//				geneItems();
+//				// mAdapter.notifyDataSetChanged();
+//				mAdapter = new ArrayAdapter<String>(XListViewActivity.this, R.layout.list_item, items);
+//				hourly_listview.setAdapter(mAdapter);
+				hourlyAdapter = new HourlyAdapter();
+				hourly_listview.setAdapter(hourlyAdapter);
+				onLoad();
+			}
+		}, 2000);
 	}
 
+	@Override
+	public void onLoadMore() {
+		mHandler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+//				geneItems();
+				hourlyAdapter.notifyDataSetChanged();
+				onLoad();
+			}
+		}, 2000);
+	}
 	class HourlyAdapter extends BaseAdapter {
 
 		@Override
@@ -134,6 +180,7 @@ public class HourlyList extends Basic implements OnClickListener {
 		// TODO Auto-generated method stub
 		switch (view.getId()) {
 		case R.id.li_biaozhun:
+			
 			Intent webLoadIntent = new Intent(this, WebLoad.class);
 			startActivity(webLoadIntent);
 			break;

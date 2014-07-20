@@ -43,7 +43,7 @@ public class MemberInfor extends Basic implements OnClickListener {
 			mImageView[i].setTag(i);// 设置与view相关的标签
 		}
 		// 设置第一个imageView不被激活
-		
+
 		mImageView[mCurSel].setEnabled(false);
 		switchLayout.setOnViewChangeListener(new MOnViewChangeListener());
 	}

@@ -5,5 +5,5 @@
     android:drawable="@drawable/more" /> 
     <item 
     android:state_checked="false" 
-    android:drawable="@drawable/more" /> 
+    android:drawable="@drawable/more_un" /> 
 </selector> 

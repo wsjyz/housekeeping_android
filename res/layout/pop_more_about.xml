@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@android:color/black"
+   android:background="@android:color/black"
     android:id="@+id/pop_more_about_parent"
     android:orientation="vertical" >
 
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/white"
+        android:background="@color/black"
         android:orientation="vertical"
         android:paddingBottom="20dp" >
 
@@ -26,8 +26,7 @@
                 android:id="@+id/hourly_avatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/logo" />
+                android:background="@drawable/login_logo" />
         </LinearLayout>
 
         <RelativeLayout
@@ -44,17 +43,17 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            android:background="@color/white" >
+           android:background="@android:color/transparent">
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
-                android:background="@color/white"
+               android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:text="400-100-1256"
-                android:textColor="@color/red"
+               android:textColor="@color/text_glay"
                 android:textColorHint="@color/red"
                 android:textSize="12dp" />
 
@@ -64,7 +63,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/hourly_phone" />
+                android:background="@drawable/about_phone" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -73,17 +72,17 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            android:background="@color/white" >
+            android:background="@android:color/transparent" >
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:text="自由飞翔"
-                android:textColor="@color/red"
+                android:textColor="@color/text_glay"
                 android:textColorHint="@color/red"
                 android:textSize="12dp" />
 
@@ -93,7 +92,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/more_wx" />
+                android:background="@drawable/about_more_wx" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -102,17 +101,17 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            android:background="@color/white" >
+           android:background="@android:color/transparent">
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:text="上海浦东新区南泉北路1015号707室"
-                android:textColor="@color/red"
+                android:textColor="@color/text_glay"
                 android:textColorHint="@color/red"
                 android:textSize="12dp" />
 
@@ -122,7 +121,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/hourly_address" />
+                android:background="@drawable/about_home" />
         </RelativeLayout>
     </LinearLayout>
 

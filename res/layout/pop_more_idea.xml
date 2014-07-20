@@ -12,7 +12,6 @@
         android:layout_height="160dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/green_yellow"
         android:orientation="vertical" >
 
         <EditText
@@ -20,11 +19,11 @@
             android:layout_height="fill_parent"
             android:layout_above="@+id/linearLayout1"
             android:layout_alignParentTop="true"
-            android:background="@android:color/transparent"
+            android:background="@android:color/white"
             android:hint="意见反馈"
             android:paddingLeft="20dp"
-            android:textColor="@color/red"
-            android:textColorHint="@color/red"
+          android:textColor="@color/reda"
+            android:textColorHint="@color/reda"
             android:textSize="12dp" />
 
         <LinearLayout
@@ -36,28 +35,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/text_glay"
+                 android:background="@color/text_glay"
                 android:gravity="center"
                 android:paddingBottom="3dp"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
                 android:paddingTop="3dp"
                 android:text="取消"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/red"
+                android:background="@color/reda"
                 android:gravity="center"
                 android:paddingBottom="3dp"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
                 android:paddingTop="3dp"
                 android:text="确认"
-                android:textColor="@color/white"
+               android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
     </RelativeLayout>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/parent"
-    android:background="@color/bg_color"
+    android:background="@color/black"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/Title_Content"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/red"
+        android:background="@color/reda"
         android:paddingBottom="5dp"
         android:paddingTop="5dp" >
 
@@ -23,12 +23,12 @@
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
+            android:onClick="onBackClick"
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
-            android:textSize="16dp" 
-             android:onClick="onBackClick"/>
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
             android:clickable="true"
             android:gravity="center"
             android:text="个人资料"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -51,7 +51,7 @@
             android:id="@+id/hourly_avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/logo" />
+            android:background="@drawable/hourly_icona" />
     </LinearLayout>
 
     <RelativeLayout
@@ -66,13 +66,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginTop="3dp"
-            android:background="@color/red"
+            android:background="@color/text_glay"
             android:paddingBottom="3dp"
             android:paddingLeft="6dp"
             android:paddingRight="6dp"
             android:paddingTop="3dp"
             android:text="编辑"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="10dp" />
     </RelativeLayout>
 
@@ -82,17 +82,17 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white" >
+        android:background="@drawable/login_input" >
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="70dp"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
             android:hint="18501775951"
-            android:textColor="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="@color/text_glay"
+            android:textColorHint="@color/text_glay"
             android:textSize="12dp" />
 
         <ImageView
@@ -100,8 +100,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/hourly_phone" />
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/about_phone" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -110,17 +110,17 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white" >
+        android:background="@drawable/login_input" >
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="70dp"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
             android:hint="自由飞翔"
-            android:textColor="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="@color/text_glay"
+            android:textColorHint="@color/text_glay"
             android:textSize="12dp" />
 
         <ImageView
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="40dp"
+           android:layout_marginLeft="20dp"
             android:background="@drawable/hourly_nickname" />
     </RelativeLayout>
 
@@ -138,17 +138,17 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white" >
+        android:background="@drawable/login_input" >
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="70dp"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
             android:hint="张呆呆"
-            android:textColor="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="@color/text_glay"
+            android:textColorHint="@color/text_glay"
             android:textSize="12dp" />
 
         <ImageView
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/hourly_name" />
     </RelativeLayout>
 
@@ -166,17 +166,17 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white" >
+        android:background="@drawable/login_input" >
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="70dp"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
             android:hint="上海浦东新区南泉北路1015号707室"
-            android:textColor="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="@color/text_glay"
+            android:textColorHint="@color/text_glay"
             android:textSize="12dp" />
 
         <ImageView
@@ -184,7 +184,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/hourly_address" />
     </RelativeLayout>
 
@@ -196,7 +196,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-        android:background="@color/red"
+        android:background="@drawable/login_btn_iv"
         android:text="@string/exit_string"
         android:textColor="@color/white"
         android:textSize="20sp"

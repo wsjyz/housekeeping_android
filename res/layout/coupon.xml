@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color"
+     android:background="@color/black"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/Title_Content"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/red"
+         android:background="@color/reda"
         android:paddingBottom="5dp"
         android:paddingTop="5dp" >
 
@@ -36,7 +36,7 @@
             android:clickable="true"
             android:gravity="center"
             android:text="优惠券"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -79,69 +79,57 @@
         android:gravity="center" >
 
         <Button
-            android:layout_width="50dp"
+            android:layout_width="70dp"
             android:layout_height="fill_parent"
-            android:background="@color/red"
+            android:background="@color/coupon_bg"
             android:gravity="center"
             android:paddingBottom="3dp"
             android:paddingLeft="6dp"
             android:paddingRight="6dp"
             android:paddingTop="3dp"
             android:text="2014.08.10有效"
-            android:textColor="@color/white"
-            android:textSize="6sp" />
+            android:textColor="@android:color/white"
+            android:textSize="10sp"/>
 
         <Button
-            android:layout_width="50dp"
+            android:layout_width="70dp"
             android:layout_height="fill_parent"
-            android:background="@color/green_yellow"
+            android:background="@color/reda"
             android:gravity="center"
             android:paddingBottom="3dp"
             android:paddingLeft="6dp"
             android:paddingRight="6dp"
             android:paddingTop="3dp"
             android:text="剩余23张"
-            android:textColor="@color/white"
-            android:textSize="10sp" />
+            android:textColor="@android:color/white"
+             android:textSize="10sp"/>
     </LinearLayout>
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="1dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="6dp"
-        android:background="@color/white" >
-    </TextView>
+    
 
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="6dp"
         android:clickable="true"
         android:gravity="center"
         android:text="请输入优惠券的有效试用期"
-        android:textColor="@color/red"
-        android:textSize="9sp" />
+        android:textColor="@color/reda"
+        android:textSize="10sp" />
 
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="2dp"
         android:clickable="true"
         android:gravity="center"
         android:text="祝您生活愉快"
-        android:textColor="@color/red"
+        android:textColor="@color/reda"
         android:textSize="10sp" />
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="1dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="6dp"
-        android:background="@color/white" >
-    </TextView>
+    
 
     <Button
         android:layout_width="fill_parent"
@@ -149,9 +137,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-        android:background="@color/white"
+        android:background="@drawable/login_btn_iv"
         android:text="扫描二维码"
-        android:textColor="@color/red"
+        android:textColor="@color/text_glay"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -161,9 +149,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white"
+        android:background="@drawable/login_btn_iv"
         android:text="输入序列号"
-        android:textColor="@color/red"
+        android:textColor="@color/text_glay"
         android:textSize="16sp"
         android:textStyle="bold" />
 

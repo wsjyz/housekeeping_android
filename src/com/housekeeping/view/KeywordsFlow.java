@@ -214,8 +214,8 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
                 final TextView txt = new TextView(getContext());  
                 txt.setOnClickListener(itemClickListener);  
                 txt.setText(keyword);  
-                txt.setTextColor(getResources().getColor(R.color.white));  
-                txt.setBackgroundColor(getResources().getColor(R.color.red));
+                txt.setTextColor(getResources().getColor(R.color.black));  
+                txt.setBackgroundColor(getResources().getColor(R.color.search_flow_bg));
                 txt.setPadding(6, 4, 6, 4);
                 txt.setTextSize(TypedValue.COMPLEX_UNIT_SP, txtSize);  
                 txt.setShadowLayer(1, 1, 1, 0xdd696969);  

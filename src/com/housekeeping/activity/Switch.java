@@ -3,9 +3,8 @@ package com.housekeeping.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -20,7 +19,7 @@ public class Switch extends Basic implements OnClickListener {
 	private int mViewCount;// 自定义控件中子控件的个数
 	private ImageView mImageView[];// 底部的imageView
 	private int mCurSel;// 当前选中的imageView
-	private ImageButton clock_me;
+	private Button clock_me;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class Switch extends Basic implements OnClickListener {
 	private void init() {
 		switchLayout = (SwitchLayout) findViewById(R.id.switchLayoutID);
 		linearLayout = (LinearLayout) findViewById(R.id.linerLayoutID);
-		clock_me = (ImageButton) findViewById(R.id.clock_me);
+		clock_me = (Button) findViewById(R.id.clock_me);
 		// 得到子控件的个数
 		mViewCount = switchLayout.getChildCount();
 		mImageView = new ImageView[mViewCount];

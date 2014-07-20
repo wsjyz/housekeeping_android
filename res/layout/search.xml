@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_gray"
+    android:background="@android:color/white"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/rltop"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/red"
+        android:background="@color/reda"
         android:gravity="center_vertical"
         android:paddingBottom="5dp"
         android:paddingTop="5dp" >
@@ -23,12 +23,12 @@
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
+            android:onClick="onBackClick"
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
-            android:textSize="16dp" 
-             android:onClick="onBackClick"/>
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
             android:clickable="true"
             android:gravity="center"
             android:text="搜索"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -53,15 +53,14 @@
         <RadioButton
             android:id="@+id/tab_search_jinque"
             style="@style/orderTabButton"
-            android:checked="true"
             android:layout_weight="1.0"
+            android:checked="true"
             android:text="精确搜索" />
 
         <RadioButton
-           android:id="@+id/tab_search_ci"
+            android:id="@+id/tab_search_ci"
             style="@style/orderTabButton"
             android:layout_weight="1.0"
-            
             android:text="关键词搜索" />
     </RadioGroup>
 
@@ -69,7 +68,7 @@
         android:id="@+id/re_search_ci"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:visibility="gone" >
 
         <com.housekeeping.view.KeywordsFlow
             android:id="@+id/keywordsflow"
@@ -86,7 +85,7 @@
             android:layout_marginBottom="40dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/red"
+            android:background="@drawable/login_btn_iv"
             android:text="换一批"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -98,7 +97,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="visible" >
+        android:visibility="gone" >
 
         <RelativeLayout
             android:id="@+id/re_more_share"
@@ -107,14 +106,14 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:background="@color/white" >
+            android:background="@drawable/login_input" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="40dp"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:text="业务种类"
                 android:textColor="@color/text_glay"
                 android:textSize="12dp" />
@@ -133,7 +132,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/more_share" />
+                android:background="@drawable/search_share" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -143,14 +142,14 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            android:background="@color/white" >
+            android:background="@drawable/login_input" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="40dp"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:text="星座"
                 android:textColor="@color/text_glay"
                 android:textSize="12dp" />
@@ -179,14 +178,14 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            android:background="@color/white" >
+            android:background="@drawable/login_input" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="40dp"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:text="血型"
                 android:textColor="@color/text_glay"
                 android:textSize="12dp" />
@@ -215,7 +214,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="50dp"
-            android:background="@color/red"
+            android:background="@drawable/login_btn_iv"
             android:text="搜索"
             android:textColor="@color/white"
             android:textSize="20sp"

@@ -3,13 +3,13 @@
     android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color"
+    android:background="@color/black"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/red"
+        android:background="@color/reda"
         android:paddingBottom="5dp"
         android:paddingTop="5dp" >
 
@@ -22,12 +22,12 @@
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
+            android:onClick="onBackClick"
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
-            android:textSize="16dp" 
-             android:onClick="onBackClick"/>
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,162 +36,131 @@
             android:clickable="true"
             android:gravity="center"
             android:text="会员"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/re_gold"
-        android:layout_width="250dp"
-        android:layout_height="165dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal" >
-
-        <ImageView
-            android:layout_width="236dp"
-            android:layout_height="154dp"
-            android:layout_gravity="right"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/gold" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="30dp"
-            android:gravity="right|bottom" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
             <LinearLayout
+                android:id="@+id/re_gold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical" >
-
-                <Button
-                    android:id="@+id/buy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/red"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="5dp"
-                    android:text="@string/buy"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_marginBottom="30dp"
-                    android:background="@drawable/triangle" />
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gold" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/buy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/hourly_add_bg"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/buy"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/re_platinumcard"
-        android:layout_width="250dp"
-        android:layout_height="165dp"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal" >
-
-        <ImageView
-            android:layout_width="236dp"
-            android:layout_height="154dp"
-            android:layout_gravity="right"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/platinumcard" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="30dp"
-            android:gravity="right|bottom" >
 
             <LinearLayout
+                android:id="@+id/re_platinumcard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical" >
-
-                <Button
-                    android:id="@+id/buy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/red"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="5dp"
-                    android:text="@string/buy"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_marginBottom="30dp"
-                    android:background="@drawable/triangle" />
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/platinumcard" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/buy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/hourly_add_bg"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/buy"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/re_masonrycard"
-        android:layout_width="250dp"
-        android:layout_height="165dp"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal" >
-
-        <ImageView
-            android:layout_width="236dp"
-            android:layout_height="154dp"
-            android:layout_gravity="right"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/masonrycard" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="30dp"
-            android:gravity="right|bottom" >
 
             <LinearLayout
+                android:id="@+id/re_masonrycard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical" >
-
-                <Button
-                    android:id="@+id/buy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/red"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="5dp"
-                    android:text="@string/buy"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_marginBottom="30dp"
-                    android:background="@drawable/triangle" />
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/masonrycard" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/buy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/hourly_add_bg"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/buy"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>

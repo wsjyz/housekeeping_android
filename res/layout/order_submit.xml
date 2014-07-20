@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color"
+     android:background="@color/black"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/Title_Content"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/red"
+       android:background="@color/reda"
         android:paddingBottom="5dp"
         android:paddingTop="5dp" >
 
@@ -37,7 +37,7 @@
             android:clickable="true"
             android:gravity="center"
             android:text="提交订单"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -45,7 +45,7 @@
         android:id="@+id/re_biaozhun"
         android:layout_width="fill_parent"
         android:layout_height="35dp"
-        android:background="@color/white" >
+       android:background="@color/work_show_color">
 
         <TextView
             android:id="@+id/feiyongbiaozhu"
@@ -55,7 +55,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="25dp"
             android:text="标准费用¥40.00/h"
-            android:textColor="@color/red"
+            android:textColor="@color/white"
             android:textSize="12dp" />
     </RelativeLayout>
 
@@ -65,7 +65,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="@color/white" >
+        android:background="@drawable/login_input" >
 
         <TextView
             android:id="@+id/textView1"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="90dp"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
             android:text="请选择服务时间"
             android:textColor="@color/text_glay"
             android:textSize="12dp" />
@@ -101,7 +101,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white" >
+        android:background="@drawable/login_input" >
 
         <TextView
             android:id="@+id/textView1"
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="90dp"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
             android:text="请选择服务时长"
             android:textColor="@color/text_glay"
             android:textSize="12dp" />
@@ -137,7 +137,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white" >
+       android:background="@drawable/login_input"  >
 
         <TextView
             android:layout_width="wrap_content"
@@ -146,7 +146,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="40dp"
             android:text="上海市"
-            android:textColor="@color/red"
+            android:textColor="@color/green_yellow"
             android:textSize="12dp" />
 
         <EditText
@@ -154,7 +154,7 @@
             android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="90dp"
-            android:background="@color/white"
+             android:background="@android:color/transparent"
             android:hint="请填写服务地址（含门牌号）"
             android:textColor="@color/text_glay"
             android:textSize="12dp" >
@@ -167,14 +167,15 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white" >
+        android:background="@drawable/login_input" 
+         >
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="90dp"
-            android:background="@color/white"
+             android:background="@android:color/transparent"
             android:hint="请填写您的特殊要求"
             android:textColor="@color/text_glay"
             android:textSize="12dp" />
@@ -196,7 +197,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-        android:background="@color/red"
+       android:background="@drawable/login_btn_iv"
         android:gravity="center"
         android:orientation="vertical"
         android:text="@string/login_string"
