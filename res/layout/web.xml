@@ -9,25 +9,19 @@
         android:id="@+id/Title_Content"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/reda"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" >
+        android:background="@color/reda" >
 
         <TextView
             android:id="@+id/textViewBack"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
-            android:textSize="16dp" 
-             android:onClick="onBackClick"/>
+            android:onClick="onBackClick"
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/title_text"
@@ -39,6 +33,27 @@
             android:text="收费标准"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/re_biaozhun"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="@color/work_show_color" >
+
+        <TextView
+            android:id="@+id/feiyongbiaozhu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="6dp"
+            android:drawableRight="@drawable/down"
+            android:text="标准费用¥40.00/h"
+            android:textColor="@color/reda"
+            android:textSize="12dp" />
     </RelativeLayout>
 
     <WebView

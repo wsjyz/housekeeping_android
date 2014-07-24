@@ -10,7 +10,7 @@ import com.housekeeping.view.MyDialog;
 import com.housekeeping.view.MyDialog.MyDialogOnClickListener;
 
 public class OrderDetail extends Basic implements OnClickListener ,MyDialogOnClickListener{
-	private Button sure;
+	private Button sure,cancle;
     private MyDialog myDialog;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,9 @@ public class OrderDetail extends Basic implements OnClickListener ,MyDialogOnCli
 
 	private void initView() {
 		sure = (Button) findViewById(R.id.sure);
+		cancle = (Button) findViewById(R.id.cancle);
 		sure.setOnClickListener(this);
+		cancle.setOnClickListener(this);
 	}
 
 	@Override
@@ -38,7 +40,9 @@ public class OrderDetail extends Basic implements OnClickListener ,MyDialogOnCli
 		case R.id.sure:
 			myDialog.show();
 			break;
-
+		case R.id.cancle:
+			this.finish();
+			break;
 		default:
 			break;
 		}

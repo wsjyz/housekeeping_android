@@ -165,30 +165,29 @@
                     android:textSize="14sp" />
 
                 <Button
-                    android:id="@+id/more_want"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:drawablePadding="4dp"
-                    android:drawableTop="@drawable/service"
-                    android:text="更多期待"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-                <Button
                     android:id="@+id/service_idea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:drawablePadding="4dp"
-                    android:drawableTop="@drawable/more_expectation"
+                    android:drawableTop="@drawable/service"
                     android:text="服务理念"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
-                      </LinearLayout>
+                <Button
+                    android:id="@+id/more_want"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="4dp"
+                    android:drawableTop="@drawable/more_expectation"
+                    android:text="更多期待"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -208,39 +207,34 @@
             <RadioButton
                 android:id="@+id/tab_person_center"
                 style="@style/MMTabButton"
-                
                 android:drawableTop="@drawable/bg_checkbox_icon_menu_a"
-                android:text="个人中心" 
-                android:lines="1"/>
+                android:lines="1"
+                android:text="个人中心" />
 
             <RadioButton
                 android:id="@+id/tab_myorder"
                 style="@style/MMTabButton"
-                
                 android:checked="true"
                 android:drawableTop="@drawable/bg_checkbox_icon_menu_b"
-                android:text="我的订单" 
-                android:lines="1"/>
+                android:lines="1"
+                android:text="我的订单" />
 
             <RadioButton
                 android:id="@+id/tab_coupon"
                 style="@style/MMTabButton"
-                
                 android:drawableTop="@drawable/bg_checkbox_icon_menu_c"
-                android:text="优惠券"
-                android:lines="1" />
+                android:lines="1"
+                android:text="优惠券" />
 
             <RadioButton
                 android:id="@+id/tab_search"
                 style="@style/MMTabButton"
-               
                 android:drawableTop="@drawable/bg_checkbox_icon_menu_d"
                 android:text="搜索" />
 
             <RadioButton
                 android:id="@+id/tab_more"
                 style="@style/MMTabButton"
-               
                 android:drawableTop="@drawable/bg_checkbox_icon_menu_e"
                 android:text="更多" />
         </RadioGroup>
@@ -252,8 +246,12 @@
             android:layout_gravity="center_horizontal|top"
             android:layout_marginLeft="20dip"
             android:layout_marginTop="1dip"
-            android:background="@drawable/demo_tips"
+            android:background="@drawable/tips"
             android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:paddingTop="2dp"
             android:text="1"
             android:textColor="#ffffff"
             android:textSize="10sp" />

@@ -9,25 +9,18 @@
         android:id="@+id/rltop"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/reda"
-        android:gravity="center_vertical"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" >
+        android:background="@color/reda" >
 
         <TextView
             android:id="@+id/textViewBack"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
             android:onClick="onBackClick"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
             android:textSize="16dp" />
 
         <TextView
@@ -46,14 +39,9 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:background="@color/white"
+            android:background="@drawable/delete_stytle"
             android:clickable="true"
-            android:drawableRight="@drawable/more_delete"
             android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
             android:textSize="16dp" />
     </RelativeLayout>
 
@@ -62,38 +50,51 @@
         android:layout_width="fill_parent"
         android:layout_height="45dp"
         android:layout_gravity="bottom"
-        android:background="@drawable/demo_bottoma"
         android:gravity="bottom"
         android:orientation="horizontal" >
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0" >
+            android:layout_height="fill_parent"
+            android:id="@+id/order_pay"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="30dp"
-                android:clickable="true"
-                android:text="8"
-                android:textColor="@color/white"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/order_tips"
+                android:gravity="center"
+                android:paddingBottom="6dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="2dp"
+                android:text="1"
+                android:textColor="@color/reda"
                 android:textSize="12.0dip" />
 
             <TextView
                 android:id="@+id/tab_person_center"
-                style="@style/orderTabButton"
-                android:text="待支付订单" />
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="待支付订单"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/tab_myorder"
-            style="@style/orderTabButton"
+            android:id="@+id/order_pay_un"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:checked="true"
-            android:text="历史订单" />
+            android:gravity="center"
+            android:text="历史订单"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <com.housekeeping.view.XListView

@@ -2,32 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="@color/black"
+    android:background="@color/black"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/Title_Content"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-       android:background="@color/reda"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" >
+        android:background="@color/reda" >
 
         <TextView
             android:id="@+id/textViewBack"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
-            android:textSize="16dp" 
-             android:onClick="onBackClick"/>
+            android:onClick="onBackClick"
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/title"
@@ -45,7 +39,7 @@
         android:id="@+id/re_biaozhun"
         android:layout_width="fill_parent"
         android:layout_height="35dp"
-       android:background="@color/work_show_color">
+        android:background="@color/work_show_color" >
 
         <TextView
             android:id="@+id/feiyongbiaozhu"
@@ -54,8 +48,11 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="25dp"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/right"
+            android:drawablePadding="6dp"
             android:text="标准费用¥40.00/h"
-            android:textColor="@color/white"
+            android:textColor="@color/reda"
             android:textSize="12dp" />
     </RelativeLayout>
 
@@ -137,7 +134,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-       android:background="@drawable/login_input"  >
+        android:background="@drawable/login_input" >
 
         <TextView
             android:layout_width="wrap_content"
@@ -154,7 +151,7 @@
             android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="90dp"
-             android:background="@android:color/transparent"
+            android:background="@android:color/transparent"
             android:hint="请填写服务地址（含门牌号）"
             android:textColor="@color/text_glay"
             android:textSize="12dp" >
@@ -167,15 +164,14 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/login_input" 
-         >
+        android:background="@drawable/login_input" >
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="90dp"
-             android:background="@android:color/transparent"
+            android:background="@android:color/transparent"
             android:hint="请填写您的特殊要求"
             android:textColor="@color/text_glay"
             android:textSize="12dp" />
@@ -197,7 +193,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-       android:background="@drawable/login_btn_iv"
+        android:background="@drawable/login_btn_iv"
         android:gravity="center"
         android:orientation="vertical"
         android:text="@string/login_string"

@@ -17,6 +17,9 @@
     <color name="zanbuzhifu">#cacaca</color>
     <color name="search_flow_bg">#d2d2d2</color>
     <color name="coupon_bg">#818181</color>
+    <color name="result_view">#b0000000</color>
+      <color name="viewfinder_mask">#60000000</color>
+      <color name="possible_result_points">#c0ffff00</color> 
     <!-- demo -->
     <color name="txt_blue">#FF007CB0</color>
     <color name="txt_gray">#FF575756</color>

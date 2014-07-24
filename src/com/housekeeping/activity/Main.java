@@ -28,6 +28,7 @@ import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.housekeeping.R;
@@ -44,7 +45,6 @@ public class Main extends Basic implements OnClickListener,
 			moreIntent;
 	private Button hourlylist, xinju, bt_want,more_want;
 	private int[] location = new int[2];
-	private RadioButton tab_myorder;
 	private RadioGroup radioGroup;
 	private FrameLayout.LayoutParams layoutParams;
 	private DisplayMetrics dm;
@@ -60,7 +60,7 @@ public class Main extends Basic implements OnClickListener,
 	private LayoutInflater inflater;
 	private LinearLayout parent;
 	private List<String> days;
-	private GridView pop_listview;
+	private ListView pop_listview;
 	private ZhouqiAdapter zhouqiAdapter;
 	private TextView tv_value,pop_title;
 	private LinearLayout topre;
@@ -71,7 +71,10 @@ public class Main extends Basic implements OnClickListener,
 	private int flag;
 	private View view_pop;
 	private PopupWindow pop_pop;
+	private RelativeLayout pop_zhouqi_parent;
 	 private MyPopDialog myPopDialog;
+	 private RadioButton tab_person_center,tab_myorder,
+	 tab_coupon,tab_search,tab_more;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -85,9 +88,10 @@ public class Main extends Basic implements OnClickListener,
 	public void prepareData() {
 		days = new ArrayList<String>();
 		hourlys = new ArrayList<String>();
-		for (int i = 1; i < 30; i++) {
+		for (int i = 1; i < 7; i++) {
 			days.add("" + i);
 		}
+		days.add("其他" );
 		for (int i = 1; i < 8; i++) {
 			hourlys.add("");
 		}
@@ -109,7 +113,8 @@ public class Main extends Basic implements OnClickListener,
 
 	public void initView() {
 		view_pop = inflater.inflate(R.layout.pop_more_delete, null);
-		pop_listview = (GridView) view_zhouqi.findViewById(R.id.pop_listview);
+		pop_listview = (ListView) view_zhouqi.findViewById(R.id.pop_listview);
+		pop_zhouqi_parent = (RelativeLayout) view_zhouqi.findViewById(R.id.pop_zhouqi_parent);
 		main_next = (ImageView) vie_main_bottom.findViewById(R.id.main_next);
 		topre = (LinearLayout) findViewById(R.id.topre);
 		parent = (LinearLayout) findViewById(R.id.parent);
@@ -127,6 +132,12 @@ public class Main extends Basic implements OnClickListener,
 		grid_main_bottom = (GridView) vie_main_bottom
 				.findViewById(R.id.bottom_gridview);
 		pop_title = (TextView) view_pop.findViewById(R.id.pop_title);
+
+		tab_person_center = (RadioButton) findViewById(R.id.tab_person_center);
+		tab_myorder = (RadioButton) findViewById(R.id.tab_myorder);
+		tab_coupon = (RadioButton) findViewById(R.id.tab_coupon);
+		tab_search = (RadioButton) findViewById(R.id.tab_search);
+		tab_more = (RadioButton) findViewById(R.id.tab_more);
 		more_want = (Button) findViewById(R.id.more_want);
 		tab_myorder.getLocationOnScreen(location);
 		main_tab_new_message.setVisibility(View.VISIBLE);
@@ -150,12 +161,20 @@ public class Main extends Basic implements OnClickListener,
 		hourly_common.setOnClickListener(this);
 		more_want.setOnClickListener(this);
 		service_idea.setOnClickListener(this);
+		pop_zhouqi_parent.setOnClickListener(this);
+
+		tab_person_center.setOnClickListener(this);
+		tab_myorder.setOnClickListener(this);
+		tab_coupon.setOnClickListener(this);
+		tab_search.setOnClickListener(this);
+		tab_more.setOnClickListener(this);
 		pop_listview.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
-				// TODO Auto-generated method stub
+					long position) {
+				// TODO Auto-generated method stu
+				tv_value.setText(position+"天");
 				pop_listview.setVisibility(View.GONE);
 			}
 
@@ -202,6 +221,24 @@ public class Main extends Basic implements OnClickListener,
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
 		switch (view.getId()) {
+		case R.id.tab_person_center:// 个人中心
+			startActivity(hourlyInforIntent);
+			break;
+		case R.id.tab_myorder:// 我的订单
+			startActivity(orderIntent);
+			break;
+		case R.id.tab_coupon:// 优惠券
+			startActivity(couponIntent);
+			break;
+		case R.id.tab_search:// 搜索
+			startActivity(searchIntent);
+			break;
+		case R.id.tab_more:// 更多
+			startActivity(moreIntent);
+			break;
+		case R.id.pop_zhouqi_parent:
+			closePop(pop_zhouqi);
+			break;
 		case R.id.hourlylist:
 			Intent hourlyListIntent = new Intent(this, HourlyList.class);
 			startActivity(hourlyListIntent);
@@ -260,19 +297,19 @@ public class Main extends Basic implements OnClickListener,
 		// TODO Auto-generated method stub
 		switch (checkedId) {
 		case R.id.tab_person_center:// 个人中心
-			startActivity(hourlyInforIntent);
+//			startActivity(hourlyInforIntent);
 			break;
 		case R.id.tab_myorder:// 我的订单
-			startActivity(orderIntent);
+//			startActivity(orderIntent);
 			break;
 		case R.id.tab_coupon:// 优惠券
-			startActivity(couponIntent);
+//			startActivity(couponIntent);
 			break;
 		case R.id.tab_search:// 搜索
-			startActivity(searchIntent);
+//			startActivity(searchIntent);
 			break;
 		case R.id.tab_more:// 更多
-			startActivity(moreIntent);
+//			startActivity(moreIntent);
 			break;
 		default:
 			break;

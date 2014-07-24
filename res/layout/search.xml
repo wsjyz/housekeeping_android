@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
@@ -9,25 +10,18 @@
         android:id="@+id/rltop"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/reda"
-        android:gravity="center_vertical"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" >
+        android:background="@color/reda" >
 
         <TextView
             android:id="@+id/textViewBack"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
             android:onClick="onBackClick"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
             android:textSize="16dp" />
 
         <TextView
@@ -74,7 +68,8 @@
             android:id="@+id/keywordsflow"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_above="@+id/next" >
+            android:layout_above="@+id/next"
+            android:visibility="gone" >
         </com.housekeeping.view.KeywordsFlow>
 
         <Button
@@ -96,11 +91,10 @@
         android:id="@+id/li_search_jinque"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone" >
+        android:orientation="vertical" >
 
         <RelativeLayout
-            android:id="@+id/re_more_share"
+            android:id="@+id/re_business"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
@@ -126,6 +120,18 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/more_direct" />
 
+            <TextView
+                android:id="@+id/text_business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="60dp"
+                android:background="@android:color/transparent"
+                android:text=""
+                android:textColor="@color/text_glay"
+                android:textSize="12dp" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -136,7 +142,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/re_more_share"
+            android:id="@+id/re_con"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
@@ -162,6 +168,18 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/more_direct" />
 
+            <TextView
+                android:id="@+id/text_con"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="60dp"
+                android:background="@android:color/transparent"
+                android:text=""
+                android:textColor="@color/text_glay"
+                android:textSize="12dp" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -172,7 +190,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/re_more_share"
+            android:id="@+id/re_blood"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
@@ -187,6 +205,18 @@
                 android:layout_marginLeft="40dp"
                 android:background="@android:color/transparent"
                 android:text="血型"
+                android:textColor="@color/text_glay"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/text_blood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="60dp"
+                android:background="@android:color/transparent"
+                android:text=""
                 android:textColor="@color/text_glay"
                 android:textSize="12dp" />
 

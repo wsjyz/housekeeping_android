@@ -11,22 +11,17 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:background="@color/reda"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" >
+       >
 
         <TextView
             android:id="@+id/textViewBack"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:clickable="true"
             android:drawableRight="@drawable/back"
             android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
             android:textSize="16dp" 
              android:onClick="onBackClick"/>
 
@@ -106,8 +101,8 @@
                     android:layout_height="fill_parent"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:text="获取验证码"
                     android:textColor="@color/white"
+                    android:background="@drawable/get_author"
                     android:textSize="12sp"
                      />
             </RelativeLayout>

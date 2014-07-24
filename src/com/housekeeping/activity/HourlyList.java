@@ -182,6 +182,8 @@ public class HourlyList extends Basic implements OnClickListener , IXListViewLis
 		case R.id.li_biaozhun:
 			
 			Intent webLoadIntent = new Intent(this, WebLoad.class);
+			webLoadIntent.putExtra("title", "小时工标准费用");
+			webLoadIntent.putExtra("url", "file:///android_asset/image/standard_fee_hourly.png");
 			startActivity(webLoadIntent);
 			break;
 		default:

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pop_zhouqi_parent"
+    style="@style/dialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@android:color/black"
     android:gravity="center"
     android:orientation="vertical" >
 
@@ -51,24 +53,24 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
-                android:background="@drawable/giant_right" />
+                android:background="@drawable/down" />
         </RelativeLayout>
     </LinearLayout>
 
-    <GridView
+    <ListView
         android:id="@+id/pop_listview"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-         android:background="@color/reda"
         android:layout_alignTop="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="105dp"
-        android:scrollbars="none"
-        android:numColumns="2"
-        android:visibility="gone"
+        android:background="@color/reda"
         android:cacheColorHint="@android:color/transparent"
         android:divider="@android:color/transparent"
-        android:listSelector="@android:color/transparent" >
-    </GridView>
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        android:visibility="gone" >
+    </ListView>
 
 </RelativeLayout>

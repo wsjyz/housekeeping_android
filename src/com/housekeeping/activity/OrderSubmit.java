@@ -49,6 +49,9 @@ public class OrderSubmit extends Basic implements OnClickListener {
 		switch (view.getId()) {
 		case R.id.re_biaozhun:
 			Intent webLoadIntent = new Intent(this, WebLoad.class);
+			webLoadIntent.putExtra("title", "新居开荒标准费用");
+			webLoadIntent.putExtra("url", "file:///android_asset/image/standard_fee_xinju.png");
+		
 			startActivity(webLoadIntent);
 			break;
 		default:
